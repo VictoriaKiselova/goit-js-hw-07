@@ -25,13 +25,20 @@ const images = [
   },
 ];
 
-let gallery = document.querySelector(".gallery");
-function showImages(images) {
-  images.forEach((element) => {
-    gallery.insertAdjacentHTML(
-      "beforeend",
-      `<li><img src="${element.url}" alt="${element.alt}"</li>`
-    );
-  });
+const gallery = document.querySelector(".gallery");
+
+function showImages(items) {
+  for (let elem of items) {
+    let listImages = document.createElement("li");
+    let img = document.createElement("img");
+    img.src = elem.url;
+    img.alt = elem.alt;
+    img.style.display = "block";
+    img.style.width = "360px";
+    img.style.height = "300px";
+    img.style.objectFit = "cover";
+    listImages.append(img);
+    gallery.append(listImages);
+  }
 }
 showImages(images);

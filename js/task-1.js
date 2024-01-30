@@ -1,5 +1,5 @@
-const list = document.getElementById("categories");
-const listItems = list.querySelectorAll(".item");
+const categoriesList = document.getElementById("categories");
+const listItems = categoriesList.querySelectorAll(".item");
 console.log(`Number of categories : ${listItems.length}`);
 
 listItems.forEach((item) => {

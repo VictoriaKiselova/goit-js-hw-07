@@ -8,7 +8,8 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 function changeColor() {
-  body.style.backgroundColor = getRandomHexColor();
-  colorValue.innerText = getRandomHexColor();
+  const color = getRandomHexColor();
+  body.style.backgroundColor = color;
+  colorValue.textContent = color;
 }
 button.addEventListener("click", changeColor);
