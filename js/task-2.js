@@ -28,6 +28,7 @@ const images = [
 const gallery = document.querySelector(".gallery");
 
 function showImages(items) {
+  let fragmentList = document.createDocumentFragment();
   for (let elem of items) {
     let listImages = document.createElement("li");
     let img = document.createElement("img");
@@ -37,8 +38,9 @@ function showImages(items) {
     img.style.width = "360px";
     img.style.height = "300px";
     img.style.objectFit = "cover";
-    listImages.append(img);
-    gallery.append(listImages);
+    listImages.appendChild(img);
+    fragmentList.appendChild(listImages);
   }
+  gallery.appendChild(fragmentList);
 }
 showImages(images);
